@@ -1,0 +1,14 @@
+use_frameworks!
+target 'menuDrawer' do
+pod 'MMDrawerController'
+pod 'Charts'
+pod 'DropDown'
+pod 'Alamofire'
+pod 'AlamofireImage'
+pod 'Firebase/Analytics'
+pod 'Firebase/Messaging'
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'IQKeyboardManagerSwift'
+pod 'Toast-Swift'
+end
