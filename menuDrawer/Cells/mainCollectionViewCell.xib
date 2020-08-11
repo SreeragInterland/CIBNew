@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell1" id="gTV-IL-0wX" customClass="mainCollectionViewCell" customModule="CIB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="86" height="89"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="86" height="89"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3LL-Fq-I4G">
+                        <rect key="frame" x="0.0" y="0.0" width="86" height="89"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="beo-ty-JRT">
+                                <rect key="frame" x="18" y="15" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ebS-tH-64n"/>
+                                    <constraint firstAttribute="width" constant="50" id="s4z-5c-x5J"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SADAD ESAL" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuG-Ng-1tj">
+                                <rect key="frame" x="5" y="70" width="76" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="0fb-uK-5uo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0lc-5t-NxO">
+                                <rect key="frame" x="43" y="8" width="20" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q26-aN-nFk">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.1803921568627451" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="3iY-Bn-Fa6"/>
+                                    <constraint firstAttribute="bottom" secondItem="Q26-aN-nFk" secondAttribute="bottom" id="5dO-fu-a53"/>
+                                    <constraint firstAttribute="height" constant="20" id="jPE-bv-F2I"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q26-aN-nFk" secondAttribute="trailing" id="qeh-OE-LqY"/>
+                                    <constraint firstItem="Q26-aN-nFk" firstAttribute="leading" secondItem="0lc-5t-NxO" secondAttribute="leading" id="tU9-xO-PPj"/>
+                                    <constraint firstItem="Q26-aN-nFk" firstAttribute="top" secondItem="0lc-5t-NxO" secondAttribute="top" id="xK9-Bs-gUs"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="beo-ty-JRT" firstAttribute="top" secondItem="3LL-Fq-I4G" secondAttribute="top" constant="15" id="4Ix-DC-F4M"/>
+                            <constraint firstItem="beo-ty-JRT" firstAttribute="centerX" secondItem="3LL-Fq-I4G" secondAttribute="centerX" id="Eay-5K-WyS"/>
+                            <constraint firstAttribute="bottom" secondItem="NuG-Ng-1tj" secondAttribute="bottom" constant="6" id="IE7-vZ-Ape"/>
+                            <constraint firstItem="beo-ty-JRT" firstAttribute="top" secondItem="0lc-5t-NxO" secondAttribute="bottom" constant="-13" id="iWd-P5-9KK"/>
+                            <constraint firstAttribute="trailing" secondItem="NuG-Ng-1tj" secondAttribute="trailing" constant="5" id="kaN-1D-qPr"/>
+                            <constraint firstItem="NuG-Ng-1tj" firstAttribute="top" secondItem="beo-ty-JRT" secondAttribute="bottom" constant="5" id="naE-2g-U5p"/>
+                            <constraint firstItem="0lc-5t-NxO" firstAttribute="trailing" secondItem="beo-ty-JRT" secondAttribute="trailing" constant="-5" id="pPd-2U-VaT"/>
+                            <constraint firstItem="NuG-Ng-1tj" firstAttribute="leading" secondItem="3LL-Fq-I4G" secondAttribute="leading" constant="5" id="vLI-8W-S41"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="3LL-Fq-I4G" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5rB-PU-hBC"/>
+                <constraint firstItem="3LL-Fq-I4G" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="FzA-I1-DjL"/>
+                <constraint firstAttribute="trailing" secondItem="3LL-Fq-I4G" secondAttribute="trailing" id="Hh2-Jj-FSq"/>
+                <constraint firstAttribute="bottom" secondItem="3LL-Fq-I4G" secondAttribute="bottom" id="f0G-Vf-dtI"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="102" height="89"/>
+            <connections>
+                <outlet property="image_view" destination="beo-ty-JRT" id="oGB-em-hDR"/>
+                <outlet property="title" destination="NuG-Ng-1tj" id="Rub-On-7zd"/>
+                <outlet property="topView" destination="0lc-5t-NxO" id="PtQ-yh-O57"/>
+            </connections>
+            <point key="canvasLocation" x="165.21739130434784" y="166.40625"/>
+        </collectionViewCell>
+    </objects>
+</document>
