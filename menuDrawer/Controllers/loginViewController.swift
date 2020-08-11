@@ -105,14 +105,54 @@ class loginViewController: CommonViewController,UIGestureRecognizerDelegate {
 //        self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func forgotBtnPrsd(_ sender: UIButton) {
+        
     }
+    
+   
+    
+    
+    
       func login(){
         self.showLoading()
         //let param:[String:Any] = ["password":self.passwordFld.text!,"userId":self.userIdFld.text!,"fcmToken":"fcm"]
         let urlStr:String = k.API_BASEURL + k.API_LOGIN
         let url = URL(string: urlStr)!
-        let param:[String:String] = ["password":"123","userId":"s99000964","fcmToken":"1fdrgtdrsgdfger"]
-   /*     rest.requestHttpHeaders.add(value: "application/x-www-form-urlencoded", forKey: "Content-Type")
+        let param:[String:String] = ["password":"123","userId":"s99000ios","fcmToken":"1fdrgtdrsgdfger"]
+         let header:HTTPHeaders = ["Accept":"application/json","Content-Type":"application/json"]
+  /*      k.ApiCall(params: param, header: header, url: urlStr, method: .post) { (response) in
+            self.hideLoading()
+            switch(response.result) {
+           case .success(_):
+                   let decoder = JSONDecoder()
+                   do {
+                        let json = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as? [String:Any]
+                        let posts = json?["status"] as? String
+                        if(posts != "fail"){
+                            let usera = try decoder.decode(user.self, from: response.data!)
+                            print(usera)
+                            UserDefaults.standard.set(true, forKey: "signIn")
+                            UserDefaults.standard.synchronize()
+                            UserDefaults.standard.set(try? PropertyListEncoder().encode(usera), forKey:"User")
+                            if let data = UserDefaults.standard.value(forKey:"User") as? Data {
+                                AppDefaults.shared.userDetails = try? PropertyListDecoder().decode(user.self, from: data)
+                            }
+                         /*   let vc:newMpinViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "newMpinViewController") as! newMpinViewController
+                            self.navigationController?.pushViewController(vc, animated: true)*/
+                        }else{
+                            if let msg = json? ["message"] as? String{
+                                self.view.makeToast(msg)
+                            }
+                        }
+                    }catch{
+                        print(error)
+                    }
+            case .failure(_):
+                print(response.result)
+                break
+                                        
+        }
+     *//*
+       rest.requestHttpHeaders.add(value: "application/x-www-form-urlencoded", forKey: "Content-Type")
         for (key,value) in param{
             rest.httpBodyParameters.add(value: value, forKey: key)
         }
@@ -156,7 +196,7 @@ class loginViewController: CommonViewController,UIGestureRecognizerDelegate {
              switch(success) {
                 case true:
                        let decoder = JSONDecoder()
-                        do {
+                       do {
                             let json = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as? [String:Any]
                             let posts = json?["status"] as? String
                             if(posts != "fail"){

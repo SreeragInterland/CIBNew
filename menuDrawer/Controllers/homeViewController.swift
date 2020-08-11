@@ -77,7 +77,7 @@ class homeViewController: CommonViewController {
         accountField.text = "All"
         dropDown.anchorView = self.accountField
         dropDown.bottomOffset = CGPoint(x: 0, y:fldHgtCnstrnt.constant)
-  //      self.accountsArr.append(contentsOf: AppDefaults.shared.userDetails!.accountNumber)
+        self.accountsArr.append(contentsOf: AppDefaults.shared.userDetails!.accountNumber)
         dropDown.dataSource = self.accountsArr
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
@@ -85,15 +85,15 @@ class homeViewController: CommonViewController {
         }
         self.accountField.layer.borderWidth = 1
         self.accountField.layer.borderColor = UIColor.white.cgColor
-      //  guard let prflImageStr:String = AppDefaults.shared.userDetails?.profileImg else{
-      //      return
-      //  }
+        guard let prflImageStr:String = AppDefaults.shared.userDetails?.profileImg else{
+            return
+        }
         self.profileImage.layer.cornerRadius = self.profileImage.frame.height / 2
         self.profileImage.layer.masksToBounds = true
-      /*  let prflImageUrl:URL = URL(string: prflImageStr)!
-        self.profileImage.af_setImage(withURL: prflImageUrl)*/
-        //self.nameLabel.text = AppDefaults.shared.userDetails?.userName
-    //        self.secondLabel.text = AppDefaults.shared.userDetails
+        let prflImageUrl:URL = URL(string: prflImageStr)!
+        self.profileImage.af.setImage(withURL: prflImageUrl)
+        self.nameLabel.text = AppDefaults.shared.userDetails?.userName
+//        self.secondLabel.text = AppDefaults.shared.userDetails.
     //        self.profileImage.af
         
         self.accountView.layer.cornerRadius = 10
@@ -179,16 +179,6 @@ class homeViewController: CommonViewController {
            chartView.data = chartData
             self.setup(pieChartView: chartView)
             chartView.legend.enabled = false
-     //   let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "System-Medium", size: 17.0)! ]
-      //     let myAttrString = NSAttributedString(string: "SAR 6500", attributes: myAttribute)
-        /*let centerText = NSMutableAttributedString(string: "Charts\nby Daniel Cohen Gindi")
-        centerText.setAttributes([.font : UIFont(name: "HelveticaNeue-Light", size: 13)!,
-                                  .paragraphStyle : paragraphStyle], range: NSRange(location: 0, length: centerText.length))
-        centerText.addAttributes([.font : UIFont(name: "HelveticaNeue-Light", size: 11)!,
-                                  .foregroundColor : UIColor.gray], range: NSRange(location: 10, length: centerText.length - 10))
-        centerText.addAttributes([.font : UIFont(name: "HelveticaNeue-Light", size: 11)!,
-                                  .foregroundColor : UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)], range: NSRange(location: centerText.length - 19, length: 19))
-        chartView.centerAttributedText = centerText;*/
         let longString = "SAR 6500 \n Spend today"
         let longestWord = "SAR 6500"
         let longestWordRange = (longString as NSString).range(of: longestWord)
@@ -197,48 +187,9 @@ class homeViewController: CommonViewController {
 
         attributedString.setAttributes([NSAttributedString.Key.font : UIFont(name: "Roboto-Medium", size: 12), NSAttributedString.Key.foregroundColor : UIColor.white], range: longestWordRange)
             
-           chartView.centerAttributedText = attributedString
-       // chartView.centerText = "SAR 6500 \n \tSpend today"
-//        chartView.
-        
+        chartView.centerAttributedText = attributedString
         chartView.holeColor = UIColor(red: 10/255, green: 107/255, blue: 199/255, alpha: 1)
            chartView.setExtraOffsets(left: 30, top: 0, right: 40, bottom: 10)
-        /*
-          // 2. Set ChartDataSet
-        let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
-        pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataPoints.count)
-        //pieChartDataSet.sliceSpace = 2
-          // 3. Set ChartData
-             
-        pieChartDataSet.valueLinePart1OffsetPercentage = 1.0
-        pieChartDataSet.valueLinePart1Length = 0.5
-        pieChartDataSet.valueLinePart2Length = 0.7
-        pieChartDataSet.valueLineColor = .clear
-        pieChartDataSet.entryLabelColor = .clear
-        pieChartDataSet.xValuePosition = .outsideSlice
-        pieChartDataSet.valueTextColor = .white
-        pieChartDataSet.yValuePosition = .outsideSlice
-        pieChartDataSet.drawValuesEnabled = true
-      //  pieChartDataSet.
-        let pieChartData = PieChartData(dataSet: pieChartDataSet)
-        let format = NumberFormatter()
-        format.numberStyle = .none
-        let formatter = DefaultValueFormatter(formatter: format)
-            
-        pieChartData.setValueFormatter(formatter)
-        pieChartData.setValueFont(.systemFont(ofSize: 11, weight: .light))
-        pieChartData.setValueTextColor(.white)
-        chartView.data = pieChartData
-        chartView.highlightValues(nil)
-        chartView.centerText = "SAR 6500 \n \tSpend today"
-        chartView.animate(xAxisDuration: 5)
-        chartView.holeColor = UIColor.lightGray
-        self.setup(pieChartView: chartView)
-        chartView.delegate = self
-        chartView.legend.enabled = false
-        chartView.setExtraOffsets(left: 30, top: 0, right: 30, bottom: 0)
-        //chartView.animate(xAxisDuration: 1.4, easingOption: .easeOutBack)
-    //        self.updateChartData()*/
             
     }
     override func updateChartData() {

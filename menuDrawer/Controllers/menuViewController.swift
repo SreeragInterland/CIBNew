@@ -7,7 +7,8 @@
 //
 
 import UIKit
-class menuViewController: UIViewController {
+import Alamofire
+class menuViewController: CommonViewController {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -19,6 +20,7 @@ class menuViewController: UIViewController {
     var sectionData:[String] = [String]()
     var tableData:[[String]] = [[String]]()
     var imageArr:[String] = [String]()
+    let k = serverPath()
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDesign()
@@ -36,7 +38,69 @@ class menuViewController: UIViewController {
                        let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "homeViewController") as! homeViewController
              NotificationCenter.default.post(name: NSNotification.Name(rawValue: "change"), object: ["centre":centerViewController])
     }
-
+    func logout(){
+           self.showLoading()
+           guard let accessToken:String = AppDefaults.shared.userDetails?.accessToken else{
+               return
+           }
+           let authValue:String = "Bearer \(accessToken)"
+           let header:HTTPHeaders = ["Authorization":authValue,"Accept":"application/json","Content-Type":"application/json"]
+           k.ApiCall(params: Parameters(), header: header, url: Constants.baseURL+Constants.API_LOGOUT, method: .post) { (response) in
+                self.hideLoading()
+                   guard let errorCode:Int = response.response?.statusCode else{
+                                                 return
+                                             }
+                              if (errorCode == 401) {
+                                  let alert:UIAlertController = UIAlertController(title: "", message: "You must login first", preferredStyle: .alert)
+                                  alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (al) in
+                                      let vc:loginViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+                                      let nv = UINavigationController(rootViewController: vc)
+                                      UIApplication.shared.keyWindow?.rootViewController = nv
+                                  }))
+                                   self.present(alert, animated: true, completion: nil)
+                              }else if (errorCode == 200){
+                               let decoder = JSONDecoder()
+                               do {
+                               let json = try JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as? [String:Any]
+                               if let responseDic:[String:Any] = json as? [String:Any]{
+                                      if let successstr:String = responseDic["result"] as? String{
+                                          if(successstr == "Success"){
+                                              UserDefaults.standard.removeObject(forKey: "isSignIn")
+                                              UserDefaults.standard.removeObject(forKey: "User")
+                                              let vc:loginViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+                                              let nv = UINavigationController(rootViewController: vc)
+                                              UIApplication.shared.keyWindow?.rootViewController = nv
+                                          }else{
+                                              UserDefaults.standard.removeObject(forKey: "isSignIn")
+                                              UserDefaults.standard.removeObject(forKey: "User")
+                                              let vc:loginViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+                                              let nv = UINavigationController(rootViewController: vc)
+                                              UIApplication.shared.keyWindow?.rootViewController = nv
+                                          }
+                                      }else{
+                                          UserDefaults.standard.removeObject(forKey: "isSignIn")
+                                          UserDefaults.standard.removeObject(forKey: "User")
+                                          let vc:loginViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+                                          let nv = UINavigationController(rootViewController: vc)
+                                          UIApplication.shared.keyWindow?.rootViewController = nv
+                                      }
+                                  }else{
+                                      UserDefaults.standard.removeObject(forKey: "isSignIn")
+                                      UserDefaults.standard.removeObject(forKey: "User")
+                                      let vc:loginViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+                                      let nv = UINavigationController(rootViewController: vc)
+                                      UIApplication.shared.keyWindow?.rootViewController = nv
+                                  }
+                                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "remDrawerController"), object: self)
+                               }catch{
+                                   print(error)
+                               }
+                              }else{
+                               self.view.makeToast(response.error?.localizedDescription)
+                              }
+                          }
+       }
+       
     func setUpDesign(){
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.height / 2
         self.profileImageView.layer.masksToBounds = true
@@ -91,6 +155,10 @@ extension menuViewController:UITableViewDelegate,UITableViewDataSource{
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "remDrawerController"), object: self)
+       
+        if(sectionData2[indexPath.row] == "Log Out"){
+            self.logout()
+        }
+         
     }
 }

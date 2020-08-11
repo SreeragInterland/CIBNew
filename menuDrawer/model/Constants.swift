@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import Alamofire
 class Constants {
     
     static let DEVICE_ID               = UIDevice.current.identifierForVendor!.uuidString
@@ -24,4 +24,18 @@ class Constants {
     static let USERTOKEN               =  UserDefaults.standard.object(forKey:"access_token")!
     
     static let API_LOGIN               = "user/login"
+    
+    static let API_LOGOUT              = "user/logout"
+    func ApiCall(params:Parameters,header:HTTPHeaders,url:String,method:HTTPMethod,completion:@escaping (AFDataResponse<Any>) -> ()) {
+             AF.request(url, method: method, parameters: params, encoding: URLEncoding.default, headers: header).responseJSON { (response:AFDataResponse<Any>) in
+                 switch(response.result) {
+                 case .success(_):
+                    completion(response)
+                 case .failure(_):
+                           completion(response)
+                     break
+                     
+                 }
+             }
+         }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import MMDrawerController
+import IQKeyboardManagerSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,17 +17,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var centerContainer: MMDrawerController?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch
+        IQKeyboardManager.shared.enable = true
         NotificationCenter.default.addObserver(self, selector: #selector(ToggleMenu), name: NSNotification.Name(rawValue: "drawer"), object: nil)
               NotificationCenter.default.addObserver(self, selector: #selector(remDrawerController), name: NSNotification.Name(rawValue: "remDrawerController"), object: nil)
          NotificationCenter.default.addObserver(self, selector: #selector(change(not:)), name: NSNotification.Name(rawValue: "change"), object: nil)
-        UserDefaults.standard.removeObject(forKey: "signIn")
         if(UserDefaults.standard.value(forKey: "signIn") != nil){
             if(UserDefaults.standard.value(forKey: "signIn") as! Bool == true){
                 if let data = UserDefaults.standard.value(forKey:"User") as? Data {
+                   
                     AppDefaults.shared.userDetails = try? PropertyListDecoder().decode(user.self, from: data)
-                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "homeViewController") as! homeViewController
-                    setUpMenu(centre: centerViewController)
+                    if let statusMpin = AppDefaults.shared.userDetails?.mPinStatus{
+                        if statusMpin{
+                            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                               let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "homeViewController") as! homeViewController
+                                               setUpMenu(centre: centerViewController)
+                        }else{
+                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                            let vc = mainStoryboard.instantiateViewController(withIdentifier: "newMpinViewController") as! newMpinViewController
+                            nv = UINavigationController(rootViewController: vc)
+                             self.window?.rootViewController = nv
+                        }
+                    }else{
+                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = mainStoryboard.instantiateViewController(withIdentifier: "newMpinViewController") as! newMpinViewController
+                        nv = UINavigationController(rootViewController: vc)
+                         self.window?.rootViewController = nv
+                    }
+                   
                 }
             }
         }else{

@@ -18,11 +18,11 @@ class newMpinViewController: UIViewController,UIGestureRecognizerDelegate {
     var activeTextField:UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
- navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         self.setupDesign()
     }
     func setupDesign(){
-           self.pinField.attributedPlaceholder = NSAttributedString(string: "Corporate Id",
+           self.pinField.attributedPlaceholder = NSAttributedString(string: "Enter MPIN",
            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
           
        }

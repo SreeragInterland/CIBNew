@@ -13,7 +13,18 @@ class serverPath{
     public let API_BASEURL = "http://202.88.237.252/CibMobile/"
 //    public let API_BASEURL = "http://192.168.1.16/CibMobile/"
     public let API_LOGIN = "user/login"
-    
+    func ApiCall(params:Parameters,header:HTTPHeaders,url:String,method:HTTPMethod,completion:@escaping (AFDataResponse<Any>) -> ()) {
+        AF.request(url, method: method, parameters: params, encoding: URLEncoding.default, headers: header).responseJSON { (response:AFDataResponse<Any>) in
+            switch(response.result) {
+            case .success(_):
+               completion(response)
+            case .failure(_):
+                      completion(response)
+                break
+                
+            }
+        }
+    }
 }
 struct NetworkState {
     var isConnected: Bool {

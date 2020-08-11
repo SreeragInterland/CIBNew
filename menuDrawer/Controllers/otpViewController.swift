@@ -41,7 +41,7 @@ extension otpViewController:UITextFieldDelegate{
             let st1 = otpFld1.text! + otpFld2.text! + otpFld3.text!
             let st2 = otpFld4.text! + otpFld5.text! + otpFld6.text!
             let st = st1 + st2
-            if st != "123456"{
+            if st == "123456"{
                 let vc:homeViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "homeViewController") as! homeViewController
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "change"), object: ["centre":vc])
             }
