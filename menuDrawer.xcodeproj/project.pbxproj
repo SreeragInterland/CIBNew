@@ -67,6 +67,9 @@
 		045EED6C24DF1679001EB35A /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EED6B24DF1678001EB35A /* user.swift */; };
 		04895DF824E13AC500F43F82 /* NetworkClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04895DF724E13AC500F43F82 /* NetworkClass.swift */; };
 		04895DFA24E13B0000F43F82 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04895DF924E13B0000F43F82 /* Constants.swift */; };
+		04B9DA3724E4535200B1EB1D /* sadadMoiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9DA3624E4535200B1EB1D /* sadadMoiViewController.swift */; };
+		04B9DA3A24E4574600B1EB1D /* moiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9DA3824E4574600B1EB1D /* moiTableViewCell.swift */; };
+		04B9DA3B24E4574600B1EB1D /* moiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B9DA3924E4574600B1EB1D /* moiTableViewCell.xib */; };
 		B0F20D9767A1F2B54ECC905F /* Pods_menuDrawer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB9A43E04BFCA3A2409CB99 /* Pods_menuDrawer.framework */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +136,9 @@
 		045EED6B24DF1678001EB35A /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		04895DF724E13AC500F43F82 /* NetworkClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClass.swift; sourceTree = "<group>"; };
 		04895DF924E13B0000F43F82 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		04B9DA3624E4535200B1EB1D /* sadadMoiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sadadMoiViewController.swift; sourceTree = "<group>"; };
+		04B9DA3824E4574600B1EB1D /* moiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moiTableViewCell.swift; sourceTree = "<group>"; };
+		04B9DA3924E4574600B1EB1D /* moiTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = moiTableViewCell.xib; sourceTree = "<group>"; };
 		0924B5A92B7F477FD09751DE /* Pods-menuDrawer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-menuDrawer.debug.xcconfig"; path = "Target Support Files/Pods-menuDrawer/Pods-menuDrawer.debug.xcconfig"; sourceTree = "<group>"; };
 		5FBCD5A72B95480F5AD5310C /* Pods-menuDrawer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-menuDrawer.release.xcconfig"; path = "Target Support Files/Pods-menuDrawer/Pods-menuDrawer.release.xcconfig"; sourceTree = "<group>"; };
 		BCB9A43E04BFCA3A2409CB99 /* Pods_menuDrawer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_menuDrawer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,26 +231,28 @@
 		045EED2524DF0736001EB35A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				045EED2F24DF0737001EB35A /* menuTableViewCell.swift */,
 				045EED2624DF0736001EB35A /* menuTableViewCell.xib */,
-				045EED2724DF0736001EB35A /* statementTableViewCell.swift */,
 				045EED2824DF0736001EB35A /* chatHeaderTableViewCell.swift */,
-				045EED2924DF0736001EB35A /* chatTableViewCell.swift */,
-				045EED2A24DF0736001EB35A /* mainCollectionViewCell.swift */,
 				045EED2B24DF0736001EB35A /* chatHeaderTableViewCell.xib */,
 				045EED2C24DF0736001EB35A /* accountTableViewCell.swift */,
 				045EED2D24DF0736001EB35A /* accountTableViewCell.xib */,
+				045EED2724DF0736001EB35A /* statementTableViewCell.swift */,
 				045EED2E24DF0736001EB35A /* statementTableViewCell.xib */,
-				045EED2F24DF0737001EB35A /* menuTableViewCell.swift */,
+				045EED3724DF0737001EB35A /* sectionTableViewCell.swift */,
 				045EED3024DF0737001EB35A /* sectionTableViewCell.xib */,
 				045EED3124DF0737001EB35A /* statHeaderTableViewCell.swift */,
+				045EED2924DF0736001EB35A /* chatTableViewCell.swift */,
 				045EED3224DF0737001EB35A /* chatTableViewCell.xib */,
 				045EED3324DF0737001EB35A /* statHeaderTableViewCell.xib */,
+				045EED2A24DF0736001EB35A /* mainCollectionViewCell.swift */,
 				045EED3424DF0737001EB35A /* mainCollectionViewCell.xib */,
-				045EED3524DF0737001EB35A /* mainTableViewCell.xib */,
-				045EED3624DF0737001EB35A /* headerTableViewCell.xib */,
-				045EED3724DF0737001EB35A /* sectionTableViewCell.swift */,
 				045EED3824DF0737001EB35A /* mainTableViewCell.swift */,
+				045EED3524DF0737001EB35A /* mainTableViewCell.xib */,
 				045EED3924DF0737001EB35A /* headerTableViewCell.swift */,
+				045EED3624DF0737001EB35A /* headerTableViewCell.xib */,
+				04B9DA3824E4574600B1EB1D /* moiTableViewCell.swift */,
+				04B9DA3924E4574600B1EB1D /* moiTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -254,6 +262,7 @@
 			children = (
 				045EED0B24DF0735001EB35A /* chatBotViewController.swift */,
 				045EED0824DF0735001EB35A /* otpViewController.swift */,
+				04B9DA3624E4535200B1EB1D /* sadadMoiViewController.swift */,
 				045EED0024DEEAE0001EB35A /* homeViewController.swift */,
 				045EED0A24DF0735001EB35A /* newMpinViewController.swift */,
 				045EED1024DF0736001EB35A /* loginViewController.swift */,
@@ -386,6 +395,7 @@
 				045EED4F24DF0737001EB35A /* Roboto-LightItalic.ttf in Resources */,
 				045EED4824DF0737001EB35A /* Roboto-MediumItalic.ttf in Resources */,
 				045EED4C24DF0737001EB35A /* Roboto-ThinItalic.ttf in Resources */,
+				04B9DA3B24E4574600B1EB1D /* moiTableViewCell.xib in Resources */,
 				045EED4724DF0737001EB35A /* Roboto-Regular.ttf in Resources */,
 				045EED5E24DF0737001EB35A /* statementTableViewCell.xib in Resources */,
 				045EED6324DF0737001EB35A /* statHeaderTableViewCell.xib in Resources */,
@@ -468,7 +478,9 @@
 				045EED4124DF0737001EB35A /* serverpaths.swift in Sources */,
 				045EED3C24DF0737001EB35A /* CommonViewController.swift in Sources */,
 				045EED5724DF0737001EB35A /* statementTableViewCell.swift in Sources */,
+				04B9DA3724E4535200B1EB1D /* sadadMoiViewController.swift in Sources */,
 				045EED5C24DF0737001EB35A /* accountTableViewCell.swift in Sources */,
+				04B9DA3A24E4574600B1EB1D /* moiTableViewCell.swift in Sources */,
 				045EED3F24DF0737001EB35A /* accountStatemtentViewController.swift in Sources */,
 				045EED3B24DF0737001EB35A /* otpViewController.swift in Sources */,
 				045EED0324DEEB71001EB35A /* menuViewController.swift in Sources */,

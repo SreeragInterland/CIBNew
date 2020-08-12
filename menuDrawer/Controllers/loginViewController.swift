@@ -11,6 +11,14 @@ import Alamofire
 import Toast_Swift
 class loginViewController: CommonViewController,UIGestureRecognizerDelegate {
 
+    @IBOutlet weak var sprtBtn: UIButton!
+    @IBOutlet weak var infoBtn: UIButton!
+    @IBOutlet weak var guideBtn: UIButton!
+    @IBOutlet weak var brnchBtn: UIButton!
+    @IBOutlet weak var supportImg: UIImageView!
+    @IBOutlet weak var infoImg: UIImageView!
+    @IBOutlet weak var guideImg: UIImageView!
+    @IBOutlet weak var branchImg: UIImageView!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var passwordFld: UITextField!
     @IBOutlet weak var userIdFld: UITextField!
@@ -27,57 +35,16 @@ class loginViewController: CommonViewController,UIGestureRecognizerDelegate {
         // Do any additional setup after loading the view.
     }
     func setupDesign(){
-   /*     self.corporateIdFld.attributedPlaceholder = NSAttributedString(string: "Corporate Id",
-        attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        self.userIdFld.attributedPlaceholder = NSAttributedString(string: "User Id",
-               attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        self.passwordFld.attributedPlaceholder = NSAttributedString(string: "Password",
-        attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
-        
-        let button4 = UIButton(type: .custom)
-        button4.setImage(UIImage(named: "ic_lock_red_24dp"), for: .normal)
-        button4.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
-        button4.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-            
-        let container4 = UIView(frame: button4.frame)
-        container4.backgroundColor = .clear
-        container4.addSubview(button4)
-        userIdFld.leftView = container4
-        userIdFld.leftViewMode = .always
-        
-        let button2 = UIButton(type: .custom)
-        button2.setImage(UIImage(named: "ic_lock_red_24dp"), for: .normal)
-        button2.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
-        button2.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-      
-        let container = UIView(frame: button2.frame)
-        container.backgroundColor = .clear
-        container.addSubview(button2)
-        passwordFld.leftView = container
-        passwordFld.leftViewMode = .always
-        
-        let button3 = UIButton(type: .custom)
-        button3.setImage(UIImage(named: "ic_corporate_logo_24dp"), for: .normal)
-        button3.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
-        button3.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-        
-        let container2 = UIView(frame: button3.frame)
-        container2.backgroundColor = .clear
-        container2.addSubview(button3)
-        corporateIdFld.leftView = container2
-        corporateIdFld.leftViewMode = .always
-        
-        let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "invisible"), for: .normal)
-        button.setImage(UIImage(named: "visibility"), for: .selected)
-        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
-        button.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-        button.addTarget(self, action: #selector(self.refresh(but:)), for: .touchUpInside)
-        let container3 = UIView(frame: button.frame)
-        container3.backgroundColor = .clear
-        container3.addSubview(button)
-        passwordFld.rightView = container3
-        passwordFld.rightViewMode = .always*/
+        self.brnchBtn.layer.cornerRadius = self.brnchBtn.frame.height / 2
+        self.guideBtn.layer.cornerRadius = self.guideBtn.frame.height / 2
+        self.infoBtn.layer.cornerRadius = self.infoBtn.frame.height / 2
+        self.sprtBtn.layer.cornerRadius = self.sprtBtn.frame.height / 2
+        self.brnchBtn.clipsToBounds = true
+        self.guideBtn.clipsToBounds = true
+        self.infoBtn.clipsToBounds = true
+        self.sprtBtn.clipsToBounds = true
+        self.loginBtn.layer.cornerRadius = self.loginBtn.frame.height / 2
+        self.loginBtn.clipsToBounds = true
     }
     @objc func refresh(but:UIButton) {
 //         dropDown.show()
