@@ -18,14 +18,18 @@ class accountStatemtentViewController: CommonViewController {
   //  let interactor = Interactor()
     let dropDown = DropDown()
     var accountsArr:[String] = ["All"]
-    var imageArr:[String] = ["a2","p1","s2"]
+    var imageArr:[String] = ["nameArrow","sarie","billPay"]
+    var dataDicArr:[[[String:String]]] = [[[String:String]]]()
+    var dateArr:[String] = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpDesign()
         self.table_view.register(UINib(nibName: "statementTableViewCell", bundle: nil), forCellReuseIdentifier: "cell1")
               self.table_view.register(UINib(nibName: "statHeaderTableViewCell", bundle: nil), forCellReuseIdentifier: "header")
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        // Do any additional setup after loading the view.
+        dateArr = Date.getDates(forLastNDays: 2)
+        self.dataDicArr = [[["name":"Mohmad Arif","Amount":"100.00 SAR","Time":"18:32","Type":"","Trans":"Money Transfer"],["name":"STC Bill Payment","Amount":"300.00 SAR","Time":"18:32","Type":"Sarie","Trans":"Money Transfer"],["name":"Bill Payment","Amount":"600.00 SAR","Time":"18:32","Type":"Sarie","Trans":"Bill Number 001"]],[["name":"STC Admin Bill","Amount":"100.00 SAR","Time":"18:32","Type":"Sadad Bill Payment","Trans":"Money Transfer"],["name":"STC Bill Payment","Amount":"300.00 SAR","Time":"18:32","Type":"","Trans":"Money Transfer"],["name":"Bill Payment","Amount":"600.00 SAR","Time":"18:32","Type":"Sarie","Trans":"Bill Number 001"]],[["name":"STC Admin Bill","Amount":"100.00 SAR","Time":"18:32","Type":"Sadad Bill Payment","Trans":"Money Transfer"],["name":"STC Bill Payment","Amount":"300.00 SAR","Time":"18:32","Type":"","Trans":"Money Transfer"],["name":"Bill Payment","Amount":"600.00 SAR","Time":"18:32","Type":"Sarie","Trans":"Bill Number 001"]]]
+        self.table_view.reloadData()
     }
     func setUpDesign(){
         dropDown.anchorView = self.accountFld
@@ -83,55 +87,82 @@ class accountStatemtentViewController: CommonViewController {
 extension accountStatemtentViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
              let cell:statementTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! statementTableViewCell
+        let dataA:[String:String] = self.dataDicArr[indexPath.section][indexPath.row]
+        cell.nameLabel.text = dataA["name"]
+        cell.middleLabel.text = dataA["Type"]
+        cell.transLabel.text = dataA["Trans"]
+        cell.amountLabel.text = dataA["Amount"]
+        cell.timeLabel.text = dataA["Time"]
         cell.but.setImage(UIImage(named: imageArr[indexPath.row]), for: .normal)
+//        cell.but.imageView?.image = UIImage(named: imageArr[indexPath.row])
 //        cell.but.setImage(UIImage(named: imageArr[indexPath.row]), for: .normal)
-       //cell.imgView.image = UIImage(named: imageArr[indexPath.row])
+//       cell.imgView.image = UIImage(named: imageArr[indexPath.row])
         if indexPath.row == 0{
-            cell.imgView.backgroundColor = self.hexStringToUIColor(hex: "#4E9C2D", alpha: 1)
+            cell.but.backgroundColor = self.hexStringToUIColor(hex: "#4E9C2D", alpha: 1)
             cell.amountLabel.textColor = self.hexStringToUIColor(hex: "#4E9C2D", alpha: 1)
         }else if(indexPath.row == 1){
-            cell.imgView.backgroundColor = self.hexStringToUIColor(hex: "#E4E724", alpha: 1)
+            cell.but.backgroundColor = self.hexStringToUIColor(hex: "#E4E724", alpha: 1)
             cell.amountLabel.textColor = self.hexStringToUIColor(hex: "#E4E724", alpha: 1)
         }else if(indexPath.row == 2){
-            cell.imgView.backgroundColor = self.hexStringToUIColor(hex: "#1087EF", alpha: 1)
+            cell.but.backgroundColor = self.hexStringToUIColor(hex: "#1087EF", alpha: 1)
             cell.amountLabel.textColor = self.hexStringToUIColor(hex: "#1087EF", alpha: 1)
         }
             return cell
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
       let  headerCell = tableView.dequeueReusableCell(withIdentifier: "header") as! statHeaderTableViewCell
-      
-      return headerCell
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd,MMMM yyyy"
+        let dateString = dateFormatter.string(from: Date())
+       
+        let cal = NSCalendar.current
+               // start with today
+        var date = cal.startOfDay(for: Date())
+        date = cal.date(byAdding: Calendar.Component.day, value: -1, to: date)!
+        let dateString2 = dateFormatter.string(from: date)
+        if(self.dateArr[section] == dateString){
+            headerCell.dateLabel.text = "Today \(self.dateArr[section])"
+        }else if(self.dateArr[section] == dateString2){
+            headerCell.dateLabel.text = "Yeaterday \(self.dateArr[section])"
+        }else{
+            headerCell.dateLabel.text = self.dateArr[section]
+        }
+        return headerCell
       
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return dateArr.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return imageArr.count
 
     }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
 }
-/*extension accountStatemtentViewController: UIViewControllerTransitioningDelegate {
 
-func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-return PresentMenuAnimator()
-}
+extension Date {
+    static func getDates(forLastNDays nDays: Int) -> [String] {
+        let cal = NSCalendar.current
+        // start with today
+        var date = cal.startOfDay(for: Date())
 
-func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-return DismissMenuAnimator()
+        var arrDates = [String]()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd,MMMM yyyy"
+        let dateString1 = dateFormatter.string(from: Date())
+        arrDates.append(dateString1)
+        for _ in 1 ... nDays {
+            // move back in time by one day:
+            date = cal.date(byAdding: Calendar.Component.day, value: -1, to: date)!
+            let dateString = dateFormatter.string(from: date)
+            arrDates.append(dateString)
+        }
+        print(arrDates)
+        return arrDates
+    }
 }
-
-func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-return interactor.hasStarted ? interactor : nil
-}
-
-func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-return interactor.hasStarted ? interactor : nil
-}
-}
-
-*/

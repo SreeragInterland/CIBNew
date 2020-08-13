@@ -15,9 +15,15 @@ class sadadMoiViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         table_view.register(UINib(nibName: "moiTableViewCell", bundle: nil), forCellReuseIdentifier: "cell1")
     }
-
+    @IBAction func menuBtnPrsd(_ sender: UIButton) {
+         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "drawer"), object: self)
+    }
+    @IBAction func addBtnPrsd(_ sender: UIButton) {
+    }
+    
 }
 extension sadadMoiViewController:UITableViewDelegate,UITableViewDataSource{
 
@@ -27,6 +33,9 @@ extension sadadMoiViewController:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		040C01DB24E174800049FEAE /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040C01DA24E174800049FEAE /* RestManager.swift */; };
+		041AF08124E5539A000CDE70 /* billDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AF08024E5539A000CDE70 /* billDetailsViewController.swift */; };
+		041AF08424E55702000CDE70 /* payeesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041AF08224E55702000CDE70 /* payeesTableViewCell.swift */; };
+		041AF08524E55702000CDE70 /* payeesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041AF08324E55702000CDE70 /* payeesTableViewCell.xib */; };
 		045EECED24DEE938001EB35A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EECEC24DEE938001EB35A /* AppDelegate.swift */; };
 		045EECF124DEE938001EB35A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EECF024DEE938001EB35A /* ViewController.swift */; };
 		045EECF424DEE938001EB35A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045EECF224DEE938001EB35A /* Main.storyboard */; };
@@ -67,6 +70,9 @@
 		045EED6C24DF1679001EB35A /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EED6B24DF1678001EB35A /* user.swift */; };
 		04895DF824E13AC500F43F82 /* NetworkClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04895DF724E13AC500F43F82 /* NetworkClass.swift */; };
 		04895DFA24E13B0000F43F82 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04895DF924E13B0000F43F82 /* Constants.swift */; };
+		0499860C24E5433A002CFCED /* billTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499860A24E5433A002CFCED /* billTableViewCell.swift */; };
+		0499860D24E5433A002CFCED /* billTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0499860B24E5433A002CFCED /* billTableViewCell.xib */; };
+		04B8A40D24E51F9800FCFC60 /* payBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8A40C24E51F9800FCFC60 /* payBillViewController.swift */; };
 		04B9DA3724E4535200B1EB1D /* sadadMoiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9DA3624E4535200B1EB1D /* sadadMoiViewController.swift */; };
 		04B9DA3A24E4574600B1EB1D /* moiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B9DA3824E4574600B1EB1D /* moiTableViewCell.swift */; };
 		04B9DA3B24E4574600B1EB1D /* moiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B9DA3924E4574600B1EB1D /* moiTableViewCell.xib */; };
@@ -75,6 +81,9 @@
 
 /* Begin PBXFileReference section */
 		040C01DA24E174800049FEAE /* RestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestManager.swift; sourceTree = "<group>"; };
+		041AF08024E5539A000CDE70 /* billDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = billDetailsViewController.swift; sourceTree = "<group>"; };
+		041AF08224E55702000CDE70 /* payeesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = payeesTableViewCell.swift; sourceTree = "<group>"; };
+		041AF08324E55702000CDE70 /* payeesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = payeesTableViewCell.xib; sourceTree = "<group>"; };
 		045EECE924DEE938001EB35A /* CIB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045EECEC24DEE938001EB35A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		045EECF024DEE938001EB35A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +145,9 @@
 		045EED6B24DF1678001EB35A /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		04895DF724E13AC500F43F82 /* NetworkClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClass.swift; sourceTree = "<group>"; };
 		04895DF924E13B0000F43F82 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0499860A24E5433A002CFCED /* billTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = billTableViewCell.swift; sourceTree = "<group>"; };
+		0499860B24E5433A002CFCED /* billTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = billTableViewCell.xib; sourceTree = "<group>"; };
+		04B8A40C24E51F9800FCFC60 /* payBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = payBillViewController.swift; sourceTree = "<group>"; };
 		04B9DA3624E4535200B1EB1D /* sadadMoiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sadadMoiViewController.swift; sourceTree = "<group>"; };
 		04B9DA3824E4574600B1EB1D /* moiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moiTableViewCell.swift; sourceTree = "<group>"; };
 		04B9DA3924E4574600B1EB1D /* moiTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = moiTableViewCell.xib; sourceTree = "<group>"; };
@@ -242,9 +254,9 @@
 				045EED3724DF0737001EB35A /* sectionTableViewCell.swift */,
 				045EED3024DF0737001EB35A /* sectionTableViewCell.xib */,
 				045EED3124DF0737001EB35A /* statHeaderTableViewCell.swift */,
+				045EED3324DF0737001EB35A /* statHeaderTableViewCell.xib */,
 				045EED2924DF0736001EB35A /* chatTableViewCell.swift */,
 				045EED3224DF0737001EB35A /* chatTableViewCell.xib */,
-				045EED3324DF0737001EB35A /* statHeaderTableViewCell.xib */,
 				045EED2A24DF0736001EB35A /* mainCollectionViewCell.swift */,
 				045EED3424DF0737001EB35A /* mainCollectionViewCell.xib */,
 				045EED3824DF0737001EB35A /* mainTableViewCell.swift */,
@@ -253,6 +265,10 @@
 				045EED3624DF0737001EB35A /* headerTableViewCell.xib */,
 				04B9DA3824E4574600B1EB1D /* moiTableViewCell.swift */,
 				04B9DA3924E4574600B1EB1D /* moiTableViewCell.xib */,
+				0499860A24E5433A002CFCED /* billTableViewCell.swift */,
+				0499860B24E5433A002CFCED /* billTableViewCell.xib */,
+				041AF08224E55702000CDE70 /* payeesTableViewCell.swift */,
+				041AF08324E55702000CDE70 /* payeesTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -269,6 +285,8 @@
 				045EED3A24DF0737001EB35A /* fingerPrintViewController.swift */,
 				045EED0224DEEB71001EB35A /* menuViewController.swift */,
 				045EED0C24DF0736001EB35A /* accountStatemtentViewController.swift */,
+				04B8A40C24E51F9800FCFC60 /* payBillViewController.swift */,
+				041AF08024E5539A000CDE70 /* billDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -396,12 +414,14 @@
 				045EED4824DF0737001EB35A /* Roboto-MediumItalic.ttf in Resources */,
 				045EED4C24DF0737001EB35A /* Roboto-ThinItalic.ttf in Resources */,
 				04B9DA3B24E4574600B1EB1D /* moiTableViewCell.xib in Resources */,
+				0499860D24E5433A002CFCED /* billTableViewCell.xib in Resources */,
 				045EED4724DF0737001EB35A /* Roboto-Regular.ttf in Resources */,
 				045EED5E24DF0737001EB35A /* statementTableViewCell.xib in Resources */,
 				045EED6324DF0737001EB35A /* statHeaderTableViewCell.xib in Resources */,
 				045EED6024DF0737001EB35A /* sectionTableViewCell.xib in Resources */,
 				045EED6224DF0737001EB35A /* chatTableViewCell.xib in Resources */,
 				045EED0524DEEBEF001EB35A /* podfile in Resources */,
+				041AF08524E55702000CDE70 /* payeesTableViewCell.xib in Resources */,
 				045EECF424DEE938001EB35A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,21 +483,25 @@
 				045EED6A24DF0737001EB35A /* fingerPrintViewController.swift in Sources */,
 				045EED6724DF0737001EB35A /* sectionTableViewCell.swift in Sources */,
 				045EED3E24DF0737001EB35A /* chatBotViewController.swift in Sources */,
+				04B8A40D24E51F9800FCFC60 /* payBillViewController.swift in Sources */,
 				045EED6824DF0737001EB35A /* mainTableViewCell.swift in Sources */,
 				045EED6124DF0737001EB35A /* statHeaderTableViewCell.swift in Sources */,
 				045EECED24DEE938001EB35A /* AppDelegate.swift in Sources */,
 				045EED5824DF0737001EB35A /* chatHeaderTableViewCell.swift in Sources */,
+				041AF08124E5539A000CDE70 /* billDetailsViewController.swift in Sources */,
 				045EED5924DF0737001EB35A /* chatTableViewCell.swift in Sources */,
 				045EED3D24DF0737001EB35A /* newMpinViewController.swift in Sources */,
 				045EED4224DF0737001EB35A /* loginViewController.swift in Sources */,
 				04895DF824E13AC500F43F82 /* NetworkClass.swift in Sources */,
 				045EED5524DF0737001EB35A /* baseViewController.swift in Sources */,
 				040C01DB24E174800049FEAE /* RestManager.swift in Sources */,
+				041AF08424E55702000CDE70 /* payeesTableViewCell.swift in Sources */,
 				045EED4024DF0737001EB35A /* AppDefaults.swift in Sources */,
 				045EED5A24DF0737001EB35A /* mainCollectionViewCell.swift in Sources */,
 				045EED4124DF0737001EB35A /* serverpaths.swift in Sources */,
 				045EED3C24DF0737001EB35A /* CommonViewController.swift in Sources */,
 				045EED5724DF0737001EB35A /* statementTableViewCell.swift in Sources */,
+				0499860C24E5433A002CFCED /* billTableViewCell.swift in Sources */,
 				04B9DA3724E4535200B1EB1D /* sadadMoiViewController.swift in Sources */,
 				045EED5C24DF0737001EB35A /* accountTableViewCell.swift in Sources */,
 				04B9DA3A24E4574600B1EB1D /* moiTableViewCell.swift in Sources */,

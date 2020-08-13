@@ -17,9 +17,9 @@ class statHeaderTableViewCell: UITableViewCell {
         // Initialization code
         self.titleView.layer.cornerRadius = self.titleView.frame.height / 2
         titleView.layer.shadowColor = UIColor.lightGray.cgColor
-        titleView.layer.shadowOffset = CGSize(width: 1, height:2)
-        titleView.layer.shadowOpacity = 0.6
-        titleView.layer.shadowRadius = 2.0
+        titleView.layer.shadowOffset = CGSize(width: -1, height:1)
+        titleView.layer.shadowOpacity = 1
+        titleView.layer.shadowRadius = 8
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

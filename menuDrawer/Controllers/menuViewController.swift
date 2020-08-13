@@ -65,28 +65,28 @@ class menuViewController: CommonViewController {
                                if let responseDic:[String:Any] = json as? [String:Any]{
                                       if let successstr:String = responseDic["result"] as? String{
                                           if(successstr == "Success"){
-                                              UserDefaults.standard.removeObject(forKey: "isSignIn")
-                                              UserDefaults.standard.removeObject(forKey: "User")
+                                              //UserDefaults.standard.removeObject(forKey: "isSignIn")
+                                             // UserDefaults.standard.removeObject(forKey: "User")
                                               let vc:loginViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
                                               let nv = UINavigationController(rootViewController: vc)
                                               UIApplication.shared.keyWindow?.rootViewController = nv
                                           }else{
-                                              UserDefaults.standard.removeObject(forKey: "isSignIn")
-                                              UserDefaults.standard.removeObject(forKey: "User")
+                                           //   UserDefaults.standard.removeObject(forKey: "isSignIn")
+                                             // UserDefaults.standard.removeObject(forKey: "User")
                                               let vc:loginViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
                                               let nv = UINavigationController(rootViewController: vc)
                                               UIApplication.shared.keyWindow?.rootViewController = nv
                                           }
                                       }else{
-                                          UserDefaults.standard.removeObject(forKey: "isSignIn")
-                                          UserDefaults.standard.removeObject(forKey: "User")
+                                        //  UserDefaults.standard.removeObject(forKey: "isSignIn")//
+                                          //UserDefaults.standard.removeObject(forKey: "User")
                                           let vc:loginViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
                                           let nv = UINavigationController(rootViewController: vc)
                                           UIApplication.shared.keyWindow?.rootViewController = nv
                                       }
                                   }else{
-                                      UserDefaults.standard.removeObject(forKey: "isSignIn")
-                                      UserDefaults.standard.removeObject(forKey: "User")
+                                     // UserDefaults.standard.removeObject(forKey: "isSignIn")
+                                     // UserDefaults.standard.removeObject(forKey: "User")
                                       let vc:loginViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
                                       let nv = UINavigationController(rootViewController: vc)
                                       UIApplication.shared.keyWindow?.rootViewController = nv
@@ -155,9 +155,20 @@ extension menuViewController:UITableViewDelegate,UITableViewDataSource{
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
         if(sectionData2[indexPath.row] == "Log Out"){
             self.logout()
+        }else if(sectionData2[indexPath.row] == "MOI Payment"){
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "sadadMoiViewController") as! sadadMoiViewController
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "change"), object: ["centre":centerViewController])
+        }else if(sectionData2[indexPath.row] == "Bill Payment"){
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "payBillViewController") as! payBillViewController
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "change"), object: ["centre":centerViewController])
+        }else if(sectionData2[indexPath.row] == "MOI Refund"){
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "billDetailsViewController") as! billDetailsViewController
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "change"), object: ["centre":centerViewController])
         }
          
     }

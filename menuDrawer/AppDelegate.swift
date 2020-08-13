@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var centerContainer: MMDrawerController?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch
+        UITabBar.appearance().tintColor = UIColor.white
+        UITabBar.appearance().unselectedItemTintColor = UIColor(red: 203/255, green: 201/255, blue: 201/255, alpha: 1)
         IQKeyboardManager.shared.enable = true
         NotificationCenter.default.addObserver(self, selector: #selector(ToggleMenu), name: NSNotification.Name(rawValue: "drawer"), object: nil)
               NotificationCenter.default.addObserver(self, selector: #selector(remDrawerController), name: NSNotification.Name(rawValue: "remDrawerController"), object: nil)
@@ -32,16 +34,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                let centerViewController = mainStoryboard.instantiateViewController(withIdentifier: "homeViewController") as! homeViewController
                                                setUpMenu(centre: centerViewController)
                         }else{
-                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                            let vc:homeViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "homeViewController") as! homeViewController
+                                                                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "change"), object: ["centre":vc])
+                     /*   let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                             let vc = mainStoryboard.instantiateViewController(withIdentifier: "newMpinViewController") as! newMpinViewController
                             nv = UINavigationController(rootViewController: vc)
-                             self.window?.rootViewController = nv
+                             self.window?.rootViewController = nv*/
                         }
                     }else{
-                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc:homeViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "homeViewController") as! homeViewController
+                                                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "change"), object: ["centre":vc])
+                   /*     let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                         let vc = mainStoryboard.instantiateViewController(withIdentifier: "newMpinViewController") as! newMpinViewController
                         nv = UINavigationController(rootViewController: vc)
-                         self.window?.rootViewController = nv
+                         self.window?.rootViewController = nv*/
                     }
                    
                 }
