@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class moiTableViewCell: UITableViewCell {
+import MGSwipeTableCell
+class moiTableViewCell: MGSwipeTableCell {
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -17,22 +17,23 @@ class moiTableViewCell: UITableViewCell {
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var downView: UIView!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var frstLtrLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         self.titleView.layer.cornerRadius = self.titleView.frame.height / 2
         self.titleView.clipsToBounds = true
         self.downView.layer.cornerRadius = self.downView.frame.height / 2
         self.downView.clipsToBounds = true
-        self.mainView.layer.cornerRadius = 10
-        self.mainView.clipsToBounds = true
+        self.mainView.layer.cornerRadius = 5
+        mainView.layer.shadowColor = UIColor.lightGray.cgColor
+        mainView.layer.shadowOffset = CGSize(width:0, height:0)
+        mainView.layer.shadowOpacity = 1
+        mainView.layer.shadowRadius = 8
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

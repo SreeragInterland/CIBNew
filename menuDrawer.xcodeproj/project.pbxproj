@@ -70,6 +70,8 @@
 		045EED6C24DF1679001EB35A /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EED6B24DF1678001EB35A /* user.swift */; };
 		04895DF824E13AC500F43F82 /* NetworkClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04895DF724E13AC500F43F82 /* NetworkClass.swift */; };
 		04895DFA24E13B0000F43F82 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04895DF924E13B0000F43F82 /* Constants.swift */; };
+		04914FAC24E71B9400D8601A /* activityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04914FAA24E71B9400D8601A /* activityTableViewCell.swift */; };
+		04914FAD24E71B9400D8601A /* activityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04914FAB24E71B9400D8601A /* activityTableViewCell.xib */; };
 		0499860C24E5433A002CFCED /* billTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0499860A24E5433A002CFCED /* billTableViewCell.swift */; };
 		0499860D24E5433A002CFCED /* billTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0499860B24E5433A002CFCED /* billTableViewCell.xib */; };
 		04B8A40D24E51F9800FCFC60 /* payBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8A40C24E51F9800FCFC60 /* payBillViewController.swift */; };
@@ -145,6 +147,8 @@
 		045EED6B24DF1678001EB35A /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
 		04895DF724E13AC500F43F82 /* NetworkClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClass.swift; sourceTree = "<group>"; };
 		04895DF924E13B0000F43F82 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		04914FAA24E71B9400D8601A /* activityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activityTableViewCell.swift; sourceTree = "<group>"; };
+		04914FAB24E71B9400D8601A /* activityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = activityTableViewCell.xib; sourceTree = "<group>"; };
 		0499860A24E5433A002CFCED /* billTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = billTableViewCell.swift; sourceTree = "<group>"; };
 		0499860B24E5433A002CFCED /* billTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = billTableViewCell.xib; sourceTree = "<group>"; };
 		04B8A40C24E51F9800FCFC60 /* payBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = payBillViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +273,8 @@
 				0499860B24E5433A002CFCED /* billTableViewCell.xib */,
 				041AF08224E55702000CDE70 /* payeesTableViewCell.swift */,
 				041AF08324E55702000CDE70 /* payeesTableViewCell.xib */,
+				04914FAA24E71B9400D8601A /* activityTableViewCell.swift */,
+				04914FAB24E71B9400D8601A /* activityTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -406,6 +412,7 @@
 				045EED4924DF0737001EB35A /* RobotoCondensed-Italic.ttf in Resources */,
 				045EECF624DEE95D001EB35A /* Assets.xcassets in Resources */,
 				045EED4524DF0737001EB35A /* RobotoCondensed-Bold.ttf in Resources */,
+				04914FAD24E71B9400D8601A /* activityTableViewCell.xib in Resources */,
 				045EED4E24DF0737001EB35A /* Roboto-BoldItalic.ttf in Resources */,
 				045EED5B24DF0737001EB35A /* chatHeaderTableViewCell.xib in Resources */,
 				045EED6624DF0737001EB35A /* headerTableViewCell.xib in Resources */,
@@ -498,6 +505,7 @@
 				041AF08424E55702000CDE70 /* payeesTableViewCell.swift in Sources */,
 				045EED4024DF0737001EB35A /* AppDefaults.swift in Sources */,
 				045EED5A24DF0737001EB35A /* mainCollectionViewCell.swift in Sources */,
+				04914FAC24E71B9400D8601A /* activityTableViewCell.swift in Sources */,
 				045EED4124DF0737001EB35A /* serverpaths.swift in Sources */,
 				045EED3C24DF0737001EB35A /* CommonViewController.swift in Sources */,
 				045EED5724DF0737001EB35A /* statementTableViewCell.swift in Sources */,

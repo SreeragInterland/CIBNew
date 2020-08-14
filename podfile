@@ -11,4 +11,5 @@ pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'IQKeyboardManagerSwift'
 pod 'Toast-Swift'
+pod 'MGSwipeTableCell'
 end

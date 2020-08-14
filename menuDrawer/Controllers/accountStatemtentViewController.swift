@@ -41,7 +41,7 @@ class accountStatemtentViewController: CommonViewController {
                    self.accountFld.text = item
                }
         let button = UIButton(type: .custom)
-        button.setImage(UIImage(named: "down-arrow"), for: .normal)
+        button.setImage(UIImage(named: "dwnArrAccnt"), for: .normal)
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
         button.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
         button.addTarget(self, action: #selector(self.refresh), for: .touchUpInside)
@@ -51,7 +51,7 @@ class accountStatemtentViewController: CommonViewController {
         accountFld.rightView = container
         accountFld.rightView = container
         accountFld.rightViewMode = .always
-        accountFld.text = "All"
+        accountFld.text = "S988658697695"
         
         self.titleView.layer.cornerRadius = 10
         titleView.layer.shadowColor = UIColor.lightGray.cgColor
@@ -93,6 +93,7 @@ extension accountStatemtentViewController:UITableViewDelegate,UITableViewDataSou
         cell.transLabel.text = dataA["Trans"]
         cell.amountLabel.text = dataA["Amount"]
         cell.timeLabel.text = dataA["Time"]
+       
         cell.but.setImage(UIImage(named: imageArr[indexPath.row]), for: .normal)
 //        cell.but.imageView?.image = UIImage(named: imageArr[indexPath.row])
 //        cell.but.setImage(UIImage(named: imageArr[indexPath.row]), for: .normal)
