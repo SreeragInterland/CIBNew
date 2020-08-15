@@ -977,10 +977,10 @@
                                                 <rect key="frame" x="0.0" y="361" width="320" height="50"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VjX-PH-9BN">
-                                                        <rect key="frame" x="10" y="5" width="257" height="40"/>
+                                                        <rect key="frame" x="10" y="5" width="214" height="40"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tln-24-dbT">
-                                                                <rect key="frame" x="15" y="5" width="201" height="30"/>
+                                                                <rect key="frame" x="15" y="5" width="158" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="fN0-n6-OxQ"/>
                                                                 </constraints>
@@ -988,7 +988,7 @@
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vq8-5d-Kqm">
-                                                                <rect key="frame" x="219" y="0.0" width="30" height="40"/>
+                                                                <rect key="frame" x="176" y="0.0" width="30" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="xwk-wO-JAd"/>
                                                                 </constraints>
@@ -1021,14 +1021,27 @@
                                                             <action selector="sendBtnPrsd:" destination="Tzh-nw-EUi" eventType="touchUpInside" id="Rtg-J7-W2h"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfe-Gs-9sM">
+                                                        <rect key="frame" x="229" y="0.0" width="41" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="41" id="ilQ-nl-uPe"/>
+                                                        </constraints>
+                                                        <state key="normal" image="microphone"/>
+                                                        <connections>
+                                                            <action selector="btnStartSpeechToText:" destination="Tzh-nw-EUi" eventType="touchUpInside" id="CID-KT-yu3"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="Tfe-Gs-9sM" secondAttribute="bottom" id="0af-ye-GiR"/>
+                                                    <constraint firstItem="Tfe-Gs-9sM" firstAttribute="top" secondItem="E62-fb-h4M" secondAttribute="top" id="5Qe-2Z-12l"/>
+                                                    <constraint firstItem="Tfe-Gs-9sM" firstAttribute="leading" secondItem="VjX-PH-9BN" secondAttribute="trailing" constant="5" id="71j-j5-v74"/>
                                                     <constraint firstAttribute="trailing" secondItem="R3i-mP-xIk" secondAttribute="trailing" constant="5" id="Hxg-x0-cA7"/>
                                                     <constraint firstItem="VjX-PH-9BN" firstAttribute="leading" secondItem="E62-fb-h4M" secondAttribute="leading" constant="10" id="KBn-KU-N0z"/>
-                                                    <constraint firstItem="R3i-mP-xIk" firstAttribute="leading" secondItem="VjX-PH-9BN" secondAttribute="trailing" constant="8" id="M8N-cb-E1K"/>
                                                     <constraint firstItem="VjX-PH-9BN" firstAttribute="centerY" secondItem="E62-fb-h4M" secondAttribute="centerY" id="MF8-VO-GS8"/>
                                                     <constraint firstAttribute="height" constant="50" id="heM-8Q-6GD"/>
+                                                    <constraint firstItem="R3i-mP-xIk" firstAttribute="leading" secondItem="Tfe-Gs-9sM" secondAttribute="trailing" constant="5" id="mD2-Au-tBL"/>
                                                     <constraint firstItem="R3i-mP-xIk" firstAttribute="centerY" secondItem="E62-fb-h4M" secondAttribute="centerY" id="p5A-RJ-2S6"/>
                                                 </constraints>
                                             </view>
@@ -1083,6 +1096,7 @@
                     </view>
                     <connections>
                         <outlet property="attachBtn" destination="Vq8-5d-Kqm" id="Zj4-fB-K6U"/>
+                        <outlet property="btnStart" destination="Tfe-Gs-9sM" id="C96-E4-IYE"/>
                         <outlet property="inputField" destination="Tln-24-dbT" id="6Bu-ej-3pb"/>
                         <outlet property="inputTypeView" destination="VjX-PH-9BN" id="qha-de-FcY"/>
                         <outlet property="onlinelabel" destination="kts-L5-zHs" id="GZy-Io-PZf"/>
@@ -2957,6 +2971,7 @@ RGViaXQgQW1vdW50IDogU0FSIDEyMC4wMBAQA
         <image name="left-arrow" width="24" height="24"/>
         <image name="loginBg" width="719" height="1280"/>
         <image name="logo" width="228" height="204"/>
+        <image name="microphone" width="32" height="32"/>
         <image name="pay" width="24" height="24"/>
         <image name="person(1)" width="512" height="512"/>
         <image name="plus" width="30" height="30"/>
